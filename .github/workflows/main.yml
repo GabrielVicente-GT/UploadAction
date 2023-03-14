@@ -30,11 +30,9 @@ jobs:
       
       - run: git status
       
-      - name: Commit files
-        run: |
-          git config --local user.email "chentevilo2001@gmail.com"
-          git config --local user.name "GabrielVicente-GT"
-          git commit -a -m "Add changes"
+      - run: git config --local user.email "chentevilo2001@gmail.com"
+      - run: git config --local user.name "GabrielVicente-GT"
+      - run: git commit -a -m "Add changes"
       
       - name: Push changes
         uses: ad-m/github-push-action@master
