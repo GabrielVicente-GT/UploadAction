@@ -28,12 +28,16 @@ jobs:
 
      # show the status of the build. Makes it easier for debugging (if there's any issues).
           
-      - run: curl -O http://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2010_2023.xlsx
-      
       - run: git config --local user.email "chentevilo2001@gmail.com"
       - run: git config --local user.name "GabrielVicente-GT"
+      
+      - run: git rm ./remfam2010_2023.xlsx
       - run: git add .
-      - run: git commit -m "Add changes"
+      - run: git commit -m "Remove last file .xslx" 
+      
+      - run: curl -O http://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2010_2023.xlsx
+      - run: git add .
+      - run: git commit -m "New file"
       
       - name: Push changes
         uses: ad-m/github-push-action@master
