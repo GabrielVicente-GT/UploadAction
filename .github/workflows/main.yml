@@ -4,7 +4,7 @@ name: Upload file
 
 on:
   schedule:
-      # every 6 hours
+      # every hour
     - cron: "0 */1 * * *"
 
 # This command allows us to run the Action automatically from the Actions tab.
@@ -26,7 +26,7 @@ jobs:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-     # show the status of the build. Makes it easier for debugging (if there's any issues).
+     # Comands to download the file automatically
           
       - run: git config --local user.email "chentevilo2001@gmail.com"
       - run: git config --local user.name "GabrielVicente-GT"
