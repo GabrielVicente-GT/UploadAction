@@ -1,4 +1,3 @@
-
 name: Upload file
 
 # Controls when the action will run. This action runs every 6 hours.
@@ -28,13 +27,8 @@ jobs:
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
      # show the status of the build. Makes it easier for debugging (if there's any issues).
-      - run: git status
-      
-      - run: git rm ./remfam2010_2023.xlsx
-      
+          
       - run: curl -O http://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2010_2023.xlsx
-      
-      - run: git status
       
       - run: git config --local user.email "chentevilo2001@gmail.com"
       - run: git config --local user.name "GabrielVicente-GT"
@@ -47,5 +41,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
           force: true
-          
-      - run: git status
