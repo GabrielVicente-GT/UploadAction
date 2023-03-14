@@ -29,3 +29,9 @@ jobs:
       - run: curl -O http://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2010_2023.xlsx
       
       - run: git status
+      
+      - run: git add .
+      
+      - run: git commit -m 'Archivo excel'
+      
+      - run: git push -u origin main
