@@ -32,6 +32,11 @@ jobs:
       
       - run: git add .
       
-      - run: git commit -m 'Archivo excel'
-      
-      - run: git push -u origin main
+      - name: Push changes
+        uses: ad-m/github-push-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          
+      - run: git status
