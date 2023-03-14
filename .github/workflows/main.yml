@@ -33,10 +33,10 @@ jobs:
       - run: git add .
       
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: ${{ github.ref }}
           force: true
           
       - run: git status
