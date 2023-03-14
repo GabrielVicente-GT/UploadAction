@@ -32,7 +32,8 @@ jobs:
       
       - run: git config --local user.email "chentevilo2001@gmail.com"
       - run: git config --local user.name "GabrielVicente-GT"
-      - run: git commit -a -m "Add changes"
+      - run: git add .
+      - run: git commit -m "Add changes"
       
       - name: Push changes
         uses: ad-m/github-push-action@master
