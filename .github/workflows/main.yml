@@ -21,13 +21,15 @@ jobs:
     steps:
 
     # Checks repo under $GITHUB_WORKSHOP, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
      # show the status of the build. Makes it easier for debugging (if there's any issues).
       - run: git status
+      
+      - run: git rm remfam2010_2023.xlsx
       
       - run: curl -O http://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2010_2023.xlsx
       
